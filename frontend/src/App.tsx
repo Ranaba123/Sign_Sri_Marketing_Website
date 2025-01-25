@@ -1,0 +1,285 @@
+import React, { useState } from 'react';
+import { FaGithub, FaLinkedin, FaInstagram, FaEnvelope } from 'react-icons/fa';
+import { 
+  MessageSquare, 
+  Book, 
+  School, 
+  Languages, 
+  MessageCircle,
+  HandPlatter as Translate,
+  Github,
+  Linkedin,
+  Instagram,
+  Mail,
+  PlayCircle,
+  Menu,
+  X,
+} from 'lucide-react';
+
+function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navItems = ['Home', 'About Us', 'Key Features', 'Team', 'Contact Us'];
+
+  return (
+    <div className="min-h-screen bg-[#162737] font-sans">
+      {/* Navigation - slightly lighter */}
+      <nav className="fixed w-full bg-[#1a2f42]/95 backdrop-blur-sm shadow-[0_2px_15px_rgba(131,229,10,0.1)] z-50">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-20">
+            <div className="flex items-center space-x-2 animate-float">
+              <Languages className="w-8 h-8 text-[#83e50a] drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]" />
+              <span className="text-2xl font-bold text-[#83e50a] drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]">SignSri</span>
+            </div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex space-x-8">
+              {navItems.map((item) => (
+                <a
+                  key={item}
+                  href={item === "Home" ? "#" : `#${item.toLowerCase().replace(' ', '-')}`}
+                  className="nav-link text-lg font-medium tracking-wide"
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button 
+              className="md:hidden text-[#83e50a] hover:text-[#33d2fe] transition-colors duration-300"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <div className="md:hidden py-4 space-y-4">
+              {navItems.map((item) => (
+                <a
+                  key={item}
+                  href={item === "Home" ? "#" : `#${item.toLowerCase().replace(' ', '-')}`}
+                  className="block text-white hover:text-[#83e50a] transition-colors duration-300 py-2 text-lg font-medium"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
+          )}
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img
+            src="src\assets\heroImage.jpg"
+            alt="Hero Background"
+            className="w-full h-full object-cover brightness-[0.3]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#162737]/10 to-[#162737]/20" />
+        </div>
+        <div className="relative container mx-auto px-4 text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in leading-tight drop-shadow-[0_0_10px_rgba(131,229,10,0.3)]">
+            Breaking Barriers in <span className="text-[#83e50a] drop-shadow-[0_0_15px_rgba(131,229,10,0.5)]">Communication</span>
+          </h1>
+          <p className="text-lg sm:text-xl text-[#33d2fe] mb-8 max-w-2xl mx-auto animate-fade-in leading-relaxed drop-shadow-[0_0_10px_rgba(51,210,254,0.5)]" style={{ animationDelay: '0.2s' }}>
+            Empowering the deaf community through innovative AI-powered sign language translation
+          </p>
+          <button className="bg-[#83e50a] text-[#162737] px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#33d2fe] hover:scale-105 transition-all duration-300 animate-fade-in shadow-[0_0_20px_rgba(131,229,10,0.3)]" style={{ animationDelay: '0.4s' }}>
+            Get Started
+          </button>
+        </div>
+      </section>
+
+      {/* About Us - lighter background */}
+      <section id="about-us" className="py-20 bg-[#1a2f42]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 text-[#83e50a] drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]">About Us</h2>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6 animate-float">
+              <p className="text-lg text-white/90 leading-relaxed">
+                SignSri is revolutionizing communication for the deaf community through cutting-edge AI technology. Our mobile application seamlessly translates between sign language and text in real-time, breaking down communication barriers and fostering inclusivity.
+              </p>
+              {/* video section */}
+              <div className="aspect-video bg-[#223548] rounded-lg border-2 border-[#83e50a] overflow-hidden group hover:border-[#33d2fe] transition-colors duration-300 shadow-[0_0_20px_rgba(131,229,10,0.2)]">
+                <div className="w-full h-full flex items-center justify-center cursor-pointer group-hover:scale-110 transition-transform duration-300">
+                  <PlayCircle className="w-16 h-16 text-[#83e50a] group-hover:text-[#33d2fe] drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]" />
+                </div>
+              </div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <div className="bg-[#223548] p-6 rounded-lg border border-[#83e50a] transform hover:scale-105 hover:border-[#33d2fe] transition-all duration-300 shadow-[0_0_20px_rgba(131,229,10,0.2)]">
+                <h3 className="font-semibold mb-2 text-[#83e50a] text-xl">Our Mission</h3>
+                <p className="text-white">To create a world where communication knows no boundaries.</p>
+              </div>
+              <div className="bg-[#223548] p-6 rounded-lg border border-[#83e50a] transform hover:scale-105 hover:border-[#33d2fe] transition-all duration-300 shadow-[0_0_20px_rgba(131,229,10,0.2)]">
+                <h3 className="font-semibold mb-2 text-[#83e50a] text-xl">Our Vision</h3>
+                <p className="text-white">Empowering deaf individuals through innovative technology.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Key Features - darker for contrast */}
+      <section id="key-features" className="py-20 bg-[#162737]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#83e50a] mb-16 drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]">Key Features</h2>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {[
+              { icon: Translate, title: 'Sign to Text', description: 'Real-time translation of sign language to text using advanced computer vision.' },
+              { icon: MessageSquare, title: 'Text to Sign', description: 'Convert text messages into accurate sign language representations.' },
+              { icon: School, title: 'Sign Language School', description: 'Interactive learning platform with gamification features.' },
+              { icon: Book, title: 'Sign Language Dictionary', description: 'Comprehensive dictionary of sign language gestures and meanings.' },
+              { icon: Languages, title: 'Sign Language Phrase Book', description: 'Quick reference tool for common phrases and expressions.' },
+              { icon: MessageCircle, title: 'Community Forum', description: 'Connect with others and share experiences in our vibrant community.' }
+            ].map((feature, index) => (
+              <div
+                key={index}
+                className="bg-[#223548] p-8 rounded-lg border-2 border-[#83e50a] transform hover:scale-105 hover:border-[#33d2fe] transition-all duration-300 shadow-[0_0_20px_rgba(131,229,10,0.2)] group"
+              >
+                <feature.icon className="w-12 h-12 text-[#83e50a] mb-4 group-hover:text-[#33d2fe] transition-colors duration-300 drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]" />
+                <h3 className="text-xl font-semibold text-[#83e50a] mb-3 group-hover:text-[#33d2fe] transition-colors duration-300">{feature.title}</h3>
+                <p className="text-white leading-relaxed">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section - lighter background */}
+      <section id="team" className="py-20 bg-[#1a2f42]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#83e50a] mb-16 drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]">Our Team</h2>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {[
+              { name: 'Pyara Perera', role: 'Team Leader', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80' },
+              { name: 'Nemsara Ranaba', role: 'Team Member', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80' },
+              { name: 'Vinuka Arampath', role: 'Team Member', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80' },
+              { name: 'Sanhida Gimhan', role: 'Team Member', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80' },
+              { name: 'Joel Lawrence', role: 'Team Member', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80' },
+              { name: 'Dileesha Devendra', role: 'Team Member', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80' }
+            ].map((member, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-lg transform hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(131,229,10,0.2)]"
+              >
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-full h-64 object-cover brightness-75 group-hover:brightness-100 transition-all duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#162737] via-[#162737]/70 to-transparent flex items-end p-6">
+                  <div>
+                    <h3 className="text-xl font-semibold text-[#83e50a] group-hover:text-[#33d2fe] transition-colors duration-300">{member.name}</h3>
+                    <p className="text-white">{member.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Coming Soon - darker for contrast */}
+      <section className="py-20 bg-[#162737] relative overflow-hidden">
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#83e50a] mb-8 animate-float drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]">Coming Soon to Play Store</h2>
+          <a 
+            href="https://play.google.com/console/about/guides/getting-featured-on-google-play/" // Replace this with the actual Play Store URL for your app 
+          >
+            <img
+              src="src\assets\Google_Play_Store_badge_EN.svg"
+              alt="Play Store"
+              className="h-12 sm:h-16 mx-auto cursor-pointer transform hover:scale-110 transition-transform duration-300 animate-float drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"
+            />
+          </a>
+        </div>
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#83e50a_0%,_transparent_35%)] opacity-20 animate-glow" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#33d2fe_0%,_transparent_35%)] opacity-20 animate-glow" style={{ animationDelay: '1s' }} />
+        </div>
+      </section>
+
+      {/* Contact Section - lighter background */}
+      <section id="contact-us" className="py-20 bg-[#1a2f42]">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#83e50a] mb-16 drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]">Contact Us</h2>
+          <div className="max-w-2xl mx-auto">
+            <form className="space-y-6">
+              <div className="transform hover:scale-105 transition-all duration-300">
+                <label htmlFor="name" className="block text-lg font-medium text-[#83e50a] mb-2">Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  required
+                  className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300 shadow-[0_0_15px_rgba(131,229,10,0.1)]" 
+                  placeholder="Your name"
+                />
+              </div>
+              <div className="transform hover:scale-105 transition-all duration-300">
+                <label htmlFor="email" className="block text-lg font-medium text-[#83e50a] mb-2">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  required
+                  className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300 shadow-[0_0_15px_rgba(131,229,10,0.1)]" 
+                  placeholder="your.email@example.com"
+                />
+              </div>
+              <div className="transform hover:scale-105 transition-all duration-300">
+                <label htmlFor="message" className="block text-lg font-medium text-[#83e50a] mb-2">Message</label>
+                <textarea 
+                  id="message" 
+                  rows={4} 
+                  required
+                  className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300 shadow-[0_0_15px_rgba(131,229,10,0.1)]" 
+                  placeholder="Your message"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-[#83e50a] text-[#162737] py-4 px-6 rounded-lg font-semibold text-lg hover:bg-[#33d2fe] transform hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(131,229,10,0.3)]"
+              >
+                Send Message
+              </button>
+            </form>
+            <div className="mt-12 text-center">
+              <h3 className="text-2xl font-semibold mb-6 text-[#83e50a] drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]">Connect With Us</h3>
+              <div className="flex justify-center space-x-8">
+                {[
+                  { icon: Github, href: 'https://github.com/Ranaba123', label: 'GitHub' },
+                  { icon: Linkedin, href: '#', label: 'LinkedIn' },
+                  { icon: Instagram, href: '#', label: 'Instagram' },
+                  { icon: Mail, href: 'mailto:signsri.official@gmail.com', label: 'Email' }
+                ].map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    aria-label={social.label}
+                    className="text-[#83e50a] hover:text-[#33d2fe] transform hover:scale-125 transition-all duration-300 drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]"
+                  >
+                    <social.icon className="w-8 h-8" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer - slightly darker */}
+      <footer className="py-6 bg-[#162737] border-t-2 border-[#83e50a]/20">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-white">&copy; {new Date().getFullYear()} SignSri. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+export default App;
