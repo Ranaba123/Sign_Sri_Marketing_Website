@@ -16,6 +16,11 @@ import {
   X,
 } from 'lucide-react';
 
+
+import PyaraImage from './assets/Pyara.jpg';
+import NemsaraImage from './assets/Nemsara.jpg';
+
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navItems = ['Home', 'About Us', 'Key Features', 'Team', 'Contact Us'];
@@ -157,8 +162,8 @@ function App() {
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#83e50a] mb-16 drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]">Our Team</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
             {[
-              { name: 'Pyara Perera', role: 'Team Leader', image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80' },
-              { name: 'Nemsara Ranaba', role: 'Team Member', image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80' },
+              { name: 'Pyara Perera', role: 'Team Leader', image: PyaraImage },
+              { name: 'Nemsara Ranaba', role: 'Team Member', image: NemsaraImage },
               { name: 'Vinuka Arampath', role: 'Team Member', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80' },
               { name: 'Sanhida Gimhan', role: 'Team Member', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80' },
               { name: 'Joel Lawrence', role: 'Team Member', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80' },
