@@ -94,7 +94,7 @@ function App() {
           <div className="absolute inset-0 bg-gradient-to-r from-[#162737]/10 to-[#162737]/20" />
         </div>
         <div className="relative container mx-auto px-4 text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in leading-tight drop-shadow-[0_0_10px_rgba(131,229,10,0.3)]">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in leading-tight ]">
             Breaking Barriers in <span className="text-[#83e50a] drop-shadow-[0_0_15px_rgba(131,229,10,0.5)]">Communication</span>
           </h1>
           <p className="text-lg sm:text-xl text-[#33d2fe] mb-8 max-w-2xl mx-auto animate-fade-in leading-relaxed drop-shadow-[0_0_10px_rgba(51,210,254,0.5)]" style={{ animationDelay: '0.2s' }}>
@@ -184,7 +184,7 @@ function App() {
                   alt={member.name}
                   className="w-full h-64 object-cover brightness-75 group-hover:brightness-100 transition-all duration-300"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#162737] via-[#162737]/70 to-transparent flex items-end p-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#162737] via-[#162737]/50 to-transparent flex items-end p-6">
                   <div>
                     <h3 className="text-xl font-semibold text-[#83e50a] group-hover:text-[#33d2fe] transition-colors duration-300">{member.name}</h3>
                     <p className="text-white">{member.role}</p>
