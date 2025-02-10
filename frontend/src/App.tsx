@@ -22,11 +22,15 @@ import NemsaraImage from './assets/Nemsara.jpg';
 import SanhidaImage from './assets/Sanhida.jpg';
 import DileeshaImage from './assets/Dileesha.jpg';
 import JoelImage from './assets/Joel.jpg';
-
+import LogoImage from './assets/logo.jpg';
+import ThumbnailImage from './assets/VideoThumbnail.png';
+import Video from "./assets/PromotionVideo.mp4";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navItems = ['Home', 'About Us', 'Key Features', 'Team', 'Contact Us'];
+  const [isPlaying, setIsPlaying] = useState(false);
+
 
   return (
     <div className="min-h-screen bg-[#162737] font-sans">
@@ -35,7 +39,7 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center space-x-2 animate-float">
-              <Languages className="w-8 h-8 text-[#83e50a]" />
+            <img src={LogoImage} alt="Sign Sri Logo" className="w-12 h-12" />
               <span className="text-4xl font-bold">
                 <span className="text-white">Sign</span>
                 <span className="text-[#83e50a]"> ශ්‍රී</span>
@@ -116,10 +120,33 @@ function App() {
                 SignSri is revolutionizing communication for the deaf community through cutting-edge AI technology. Our mobile application seamlessly translates between sign language and text in real-time, breaking down communication barriers and fostering inclusivity.
               </p>
               {/* video section */}
-              <div className="aspect-video bg-[#223548] rounded-lg border-2 border-[#83e50a] overflow-hidden group hover:border-[#33d2fe] transition-colors duration-300 ">
-                <div className="w-full h-full flex items-center justify-center cursor-pointer group-hover:scale-110 transition-transform duration-300">
-                  <PlayCircle className="w-16 h-16 text-[#83e50a] group-hover:text-[#33d2fe]" />
-                </div>
+              <div 
+                className="aspect-video bg-[#223548] rounded-lg border-2 border-[#83e50a] overflow-hidden group hover:border-[#33d2fe] transition-colors duration-300 relative cursor-pointer"
+                onClick={() => setIsPlaying(true)}
+              >
+                  {!isPlaying ? (
+                    <>
+                      {/* Thumbnail Image */}
+                      <img 
+                        src={ThumbnailImage} 
+                        alt="Video Thumbnail" 
+                        className="w-full h-full object-cover"
+                      />
+                      {/* Play Button */}
+                      <div className="absolute inset-0 flex items-center justify-center">
+                          <PlayCircle className="w-16 h-16 text-[#83e50a] group-hover:text-[#33d2fe] transition-colors duration-300" />
+                      </div>
+                    </>
+                  ) : (
+                    <video 
+                    src={Video} 
+                    controls 
+                    autoPlay 
+                    className="w-full h-full"
+                  />
+
+                  )}
+
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
