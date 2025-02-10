@@ -19,6 +19,9 @@ import {
 
 import PyaraImage from './assets/Pyara.jpg';
 import NemsaraImage from './assets/Nemsara.jpg';
+import SanhidaImage from './assets/Sanhida.jpg';
+import DileeshaImage from './assets/Dileesha.jpg';
+import JoelImage from './assets/Joel.jpg';
 
 
 function App() {
@@ -28,12 +31,15 @@ function App() {
   return (
     <div className="min-h-screen bg-[#162737] font-sans">
       {/* Navigation - slightly lighter */}
-      <nav className="fixed w-full bg-[#1a2f42]/95 backdrop-blur-sm shadow-[0_2px_15px_rgba(131,229,10,0.1)] z-50">
+      <nav className="fixed w-full bg-[#1a2f42]/95 backdrop-blur-sm z-50">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center space-x-2 animate-float">
-              <Languages className="w-8 h-8 text-[#83e50a] drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]" />
-              <span className="text-2xl font-bold text-[#83e50a] drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]">SignSri</span>
+              <Languages className="w-8 h-8 text-[#83e50a]" />
+              <span className="text-4xl font-bold">
+                <span className="text-white">Sign</span>
+                <span className="text-[#83e50a]"> ශ්‍රී</span>
+              </span>
             </div>
 
             {/* Desktop Navigation */}
@@ -103,25 +109,25 @@ function App() {
       {/* About Us - lighter background */}
       <section id="about-us" className="py-20 bg-[#1a2f42]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 text-[#83e50a] drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]">About Us</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 text-[#83e50a] ">About Us</h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 animate-float">
               <p className="text-lg text-white/90 leading-relaxed">
                 SignSri is revolutionizing communication for the deaf community through cutting-edge AI technology. Our mobile application seamlessly translates between sign language and text in real-time, breaking down communication barriers and fostering inclusivity.
               </p>
               {/* video section */}
-              <div className="aspect-video bg-[#223548] rounded-lg border-2 border-[#83e50a] overflow-hidden group hover:border-[#33d2fe] transition-colors duration-300 shadow-[0_0_20px_rgba(131,229,10,0.2)]">
+              <div className="aspect-video bg-[#223548] rounded-lg border-2 border-[#83e50a] overflow-hidden group hover:border-[#33d2fe] transition-colors duration-300 ">
                 <div className="w-full h-full flex items-center justify-center cursor-pointer group-hover:scale-110 transition-transform duration-300">
-                  <PlayCircle className="w-16 h-16 text-[#83e50a] group-hover:text-[#33d2fe] drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]" />
+                  <PlayCircle className="w-16 h-16 text-[#83e50a] group-hover:text-[#33d2fe]" />
                 </div>
               </div>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-[#223548] p-6 rounded-lg border border-[#83e50a] transform hover:scale-105 hover:border-[#33d2fe] transition-all duration-300 shadow-[0_0_20px_rgba(131,229,10,0.2)]">
+              <div className="bg-[#223548] p-6 rounded-lg border border-[#83e50a] transform hover:scale-105 hover:border-[#33d2fe] transition-all duration-300 ">
                 <h3 className="font-semibold mb-2 text-[#83e50a] text-xl">Our Mission</h3>
                 <p className="text-white">To create a world where communication knows no boundaries.</p>
               </div>
-              <div className="bg-[#223548] p-6 rounded-lg border border-[#83e50a] transform hover:scale-105 hover:border-[#33d2fe] transition-all duration-300 shadow-[0_0_20px_rgba(131,229,10,0.2)]">
+              <div className="bg-[#223548] p-6 rounded-lg border border-[#83e50a] transform hover:scale-105 hover:border-[#33d2fe] transition-all duration-300 ">
                 <h3 className="font-semibold mb-2 text-[#83e50a] text-xl">Our Vision</h3>
                 <p className="text-white">Empowering deaf individuals through innovative technology.</p>
               </div>
@@ -133,7 +139,7 @@ function App() {
       {/* Key Features - darker for contrast */}
       <section id="key-features" className="py-20 bg-[#162737]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#83e50a] mb-16 drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]">Key Features</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#83e50a] mb-16 ]">Key Features</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
             {[
               { icon: Translate, title: 'Sign to Text', description: 'Real-time translation of sign language to text using advanced computer vision.' },
@@ -145,9 +151,9 @@ function App() {
             ].map((feature, index) => (
               <div
                 key={index}
-                className="bg-[#223548] p-8 rounded-lg border-2 border-[#83e50a] transform hover:scale-105 hover:border-[#33d2fe] transition-all duration-300 shadow-[0_0_20px_rgba(131,229,10,0.2)] group"
+                className="bg-[#223548] p-8 rounded-lg border-2 border-[#83e50a] transform hover:scale-105 hover:border-[#33d2fe] transition-all duration-300 ] group"
               >
-                <feature.icon className="w-12 h-12 text-[#83e50a] mb-4 group-hover:text-[#33d2fe] transition-colors duration-300 drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]" />
+                <feature.icon className="w-12 h-12 text-[#83e50a] mb-4 group-hover:text-[#33d2fe] transition-colors duration-300 " />
                 <h3 className="text-xl font-semibold text-[#83e50a] mb-3 group-hover:text-[#33d2fe] transition-colors duration-300">{feature.title}</h3>
                 <p className="text-white leading-relaxed">{feature.description}</p>
               </div>
@@ -159,19 +165,19 @@ function App() {
       {/* Team Section - lighter background */}
       <section id="team" className="py-20 bg-[#1a2f42]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#83e50a] mb-16 drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]">Our Team</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#83e50a] mb-16 ]">Our Team</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
             {[
               { name: 'Pyara Perera', role: 'Team Leader', image: PyaraImage },
               { name: 'Nemsara Ranaba', role: 'Team Member', image: NemsaraImage },
               { name: 'Vinuka Arampath', role: 'Team Member', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80' },
-              { name: 'Sanhida Gimhan', role: 'Team Member', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80' },
-              { name: 'Joel Lawrence', role: 'Team Member', image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80' },
-              { name: 'Dileesha Devendra', role: 'Team Member', image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80' }
+              { name: 'Sanhida Gimhan', role: 'Team Member', image: SanhidaImage },
+              { name: 'Joel Lawrence', role: 'Team Member', image: JoelImage },
+              { name: 'Dileesha Devendra', role: 'Team Member', image: DileeshaImage }
             ].map((member, index) => (
               <div
                 key={index}
-                className="group relative overflow-hidden rounded-lg transform hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(131,229,10,0.2)]"
+                className="group relative overflow-hidden rounded-lg transform hover:scale-105 transition-all duration-300 "
               >
                 <img
                   src={member.image}
@@ -213,7 +219,7 @@ function App() {
       {/* Contact Section - lighter background */}
       <section id="contact-us" className="py-20 bg-[#1a2f42]">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#83e50a] mb-16 drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]">Contact Us</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#83e50a] mb-16 ]">Contact Us</h2>
           <div className="max-w-2xl mx-auto">
             <form className="space-y-6">
               <div className="transform hover:scale-105 transition-all duration-300">
@@ -222,7 +228,7 @@ function App() {
                   type="text" 
                   id="name" 
                   required
-                  className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300 shadow-[0_0_15px_rgba(131,229,10,0.1)]" 
+                  className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300 ]" 
                   placeholder="Your name"
                 />
               </div>
@@ -232,7 +238,7 @@ function App() {
                   type="email" 
                   id="email" 
                   required
-                  className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300 shadow-[0_0_15px_rgba(131,229,10,0.1)]" 
+                  className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300 ]" 
                   placeholder="your.email@example.com"
                 />
               </div>
@@ -242,19 +248,19 @@ function App() {
                   id="message" 
                   rows={4} 
                   required
-                  className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300 shadow-[0_0_15px_rgba(131,229,10,0.1)]" 
+                  className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300 ]" 
                   placeholder="Your message"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-[#83e50a] text-[#162737] py-4 px-6 rounded-lg font-semibold text-lg hover:bg-[#33d2fe] transform hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(131,229,10,0.3)]"
+                className="w-full bg-[#83e50a] text-[#162737] py-4 px-6 rounded-lg font-semibold text-lg hover:bg-[#33d2fe] transform hover:scale-105 transition-all duration-300 ]"
               >
                 Send Message
               </button>
             </form>
             <div className="mt-12 text-center">
-              <h3 className="text-2xl font-semibold mb-6 text-[#83e50a] drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]">Connect With Us</h3>
+              <h3 className="text-2xl font-semibold mb-6 text-[#83e50a] ]">Connect With Us</h3>
               <div className="flex justify-center space-x-8">
                 {[
                   { icon: Github, href: 'https://github.com/Ranaba123', label: 'GitHub' },
@@ -266,7 +272,7 @@ function App() {
                     key={index}
                     href={social.href}
                     aria-label={social.label}
-                    className="text-[#83e50a] hover:text-[#33d2fe] transform hover:scale-125 transition-all duration-300 drop-shadow-[0_0_10px_rgba(131,229,10,0.5)]"
+                    className="text-[#83e50a] hover:text-[#33d2fe] transform hover:scale-125 transition-all duration-300]"
                   >
                     <social.icon className="w-8 h-8" />
                   </a>
