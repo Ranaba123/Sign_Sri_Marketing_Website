@@ -1,0 +1,12 @@
+{
+  "name": "sign_sri_marketing_website",
+  "version": "1.0.0",
+  "description": "This Repository is created for the marketing website of the Sign Sri Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
