@@ -63,7 +63,7 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             <div className="flex items-center space-x-2 animate-float">
-            <img src={LogoImage} alt="Sign Sri Logo" className="w-12 h-12" />
+            <img src={LogoImage} alt="Sign Sri Logo" className="w-12 h-12"  />
               <span className="text-4xl font-bold">
                 <span className="text-white">Sign</span>
                 <span className="text-[#83e50a]"> ශ්‍රී</span>
