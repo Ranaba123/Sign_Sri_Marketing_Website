@@ -19,6 +19,7 @@ import axios from "axios";
 
 import PyaraImage from './assets/Pyara.jpg';
 import NemsaraImage from './assets/Nemsara.jpg';
+import VinukaImage from './assets/Arampath.jpg';
 import SanhidaImage from './assets/Sanhida.jpg';
 import DileeshaImage from './assets/Dileesha.jpg';
 import JoelImage from './assets/Joel.jpg';
@@ -220,7 +221,7 @@ function App() {
             {[
               { name: 'Pyara Perera', role: 'Team Leader', image: PyaraImage },
               { name: 'Nemsara Ranaba', role: 'Team Member', image: NemsaraImage },
-              { name: 'Vinuka Arampath', role: 'Team Member', image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80' },
+              { name: 'Vinuka Arampath', role: 'Team Member', image: VinukaImage },
               { name: 'Sanhida Gimhan', role: 'Team Member', image: SanhidaImage },
               { name: 'Joel Lawrence', role: 'Team Member', image: JoelImage },
               { name: 'Dileesha Devendra', role: 'Team Member', image: DileeshaImage }
