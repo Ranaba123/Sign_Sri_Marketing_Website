@@ -37,19 +37,29 @@ function App() {
     message: "",
   });
   const [status, setStatus] = useState("");
+  
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
-
+  
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+  
+    // Validate fields
+    if (!formData.name || !formData.email || !formData.message) {
+      setStatus("Please fill out all fields.");
+      return;
+    }
+  
     setStatus("Sending...");
-
+  
     try {
-      await axios.post("http://localhost:5000/send-email", formData);
+      const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
+      await axios.post(`${backendUrl}/send-email`, formData);
       setStatus("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
+      setFormData({ name: "", email: "", message: "" }); // Clear the form
     } catch (error) {
+      console.error("Error sending message:", error);
       setStatus("Failed to send message.");
     }
   };
