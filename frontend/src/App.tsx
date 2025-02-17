@@ -282,42 +282,57 @@ function App() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#83e50a] mb-16 ]">Contact Us</h2>
           <div className="max-w-2xl mx-auto">
-          <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="transform hover:scale-105 transition-all duration-300">
-        <label htmlFor="name" className="block text-lg font-medium text-[#83e50a] mb-2">
-          Name
-        </label>
-        <input 
-          type="text" id="name" required value={formData.name} onChange={handleChange}
-          className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300"
-          placeholder="Your name"
-        />
-      </div>
-      <div className="transform hover:scale-105 transition-all duration-300">
-        <label htmlFor="email" className="block text-lg font-medium text-[#83e50a] mb-2">
-          Email
-        </label>
-        <input 
-          type="email" id="email" required value={formData.email} onChange={handleChange}
-          className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300"
-          placeholder="your.email@example.com"
-        />
-      </div>
-      <div className="transform hover:scale-105 transition-all duration-300">
-        <label htmlFor="message" className="block text-lg font-medium text-[#83e50a] mb-2">
-          Message
-        </label>
-        <textarea 
-          id="message" rows={4} required value={formData.message} onChange={handleChange}
-          className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300"
-          placeholder="Your message"
-        />
-      </div>
-      <button type="submit" className="w-full bg-[#83e50a] text-[#162737] py-4 px-6 rounded-lg font-semibold text-lg hover:bg-[#33d2fe] transform hover:scale-105 transition-all duration-300">
-        Send Message
-      </button>
-      {status && <p className="text-white text-center mt-4">{status}</p>}
-    </form>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="transform hover:scale-105 transition-all duration-300">
+                <label htmlFor="name" className="block text-lg font-medium text-[#83e50a] mb-2">
+                  Name
+                </label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  required 
+                  value={formData.name} 
+                  onChange={handleChange}
+                  className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300"
+                  placeholder="Your name"
+                />
+              </div>
+              <div className="transform hover:scale-105 transition-all duration-300">
+                <label htmlFor="email" className="block text-lg font-medium text-[#83e50a] mb-2">
+                  Email
+                </label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  required 
+                  value={formData.email} 
+                  onChange={handleChange}
+                  className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300"
+                  placeholder="your.email@example.com"
+                />
+                
+              </div>
+              <div className="transform hover:scale-105 transition-all duration-300">
+                <label htmlFor="message" className="block text-lg font-medium text-[#83e50a] mb-2">
+                  Message
+                </label>
+                <textarea 
+                  id="message" 
+                  rows={4} 
+                  required 
+                  value={formData.message} 
+                  onChange={handleChange}
+                  className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300"
+                  placeholder="Your message"
+                />
+              </div>
+              <button 
+                type="submit"
+                className="w-full bg-[#83e50a] text-[#162737] py-4 px-6 rounded-lg font-semibold text-lg hover:bg-[#33d2fe] transform hover:scale-105 transition-all duration-300">
+                Send Message
+              </button>
+              {status && <p className="text-white text-center mt-4">{status}</p>}
+            </form>
             <div className="mt-12 text-center">
               <h3 className="text-2xl font-semibold mb-6 text-[#83e50a] ]">Connect With Us</h3>
               <div className="flex justify-center space-x-8">
