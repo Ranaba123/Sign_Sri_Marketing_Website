@@ -26,6 +26,8 @@ import JoelImage from './assets/Joel.jpg';
 import LogoImage from './assets/Logo.jpg';
 import ThumbnailImage from './assets/VideoThumbnail.png';
 import Video from "./assets/PromotionVideo.mp4";
+import HeroImage from './assets/heroImage.jpg';
+import GooglePlay from "./assets/Google_Play_Store_badge_EN.svg";
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -131,7 +133,7 @@ function App() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
-            src="src\assets\heroImage.jpg"
+            src={HeroImage}
             alt="Hero Background"
             className="w-full h-full object-cover brightness-[0.3]"
           />
@@ -271,7 +273,7 @@ function App() {
             href="https://play.google.com/console/about/guides/getting-featured-on-google-play/" // Replace this with the actual Play Store URL for your app 
           >
             <img
-              src="src\assets\Google_Play_Store_badge_EN.svg"
+              src={GooglePlay}
               alt="Play Store"
               className="h-12 sm:h-16 mx-auto cursor-pointer transform hover:scale-110 transition-transform duration-300 animate-float drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"
             />
