@@ -23,7 +23,7 @@ import VinukaImage from './assets/Arampath.jpg';
 import SanhidaImage from './assets/Sanhida.jpg';
 import DileeshaImage from './assets/Dileesha.jpg';
 import JoelImage from './assets/Joel.jpg';
-import LogoImage from './assets/logo.jpg';
+import LogoImage from './assets/Logo.jpg';
 import ThumbnailImage from './assets/VideoThumbnail.png';
 import Video from "./assets/PromotionVideo.mp4";
 
