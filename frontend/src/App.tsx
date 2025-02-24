@@ -8,13 +8,12 @@ import {
   HandPlatter as Translate,
   Github,
   Linkedin,
-  Instagram,
   Mail,
   PlayCircle,
   Menu,
   X,
+  Music2,
 } from 'lucide-react';
-import axios from "axios";
 
 
 import PyaraImage from './assets/Pyara.jpg';
@@ -33,38 +32,38 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navItems = ['Home', 'About Us', 'Key Features', 'Team', 'Contact Us'];
   const [isPlaying, setIsPlaying] = useState(false);
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-  const [status, setStatus] = useState("");
   
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.id]: e.target.value });
-  };
-  
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-  
-    // Validate fields
-    if (!formData.name || !formData.email || !formData.message) {
-      setStatus("Please fill out all fields.");
-      return;
-    }
-  
-    setStatus("Sending...");
-  
+
+  const [result, setResult] = React.useState("");
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setResult("Sending....");
+
+    const form = event.currentTarget; // Use event.currentTarget instead of event.target
+    const formData = new FormData(form);
+    formData.append("access_key", "b5509b0e-42bf-4645-a3ef-00902c218022");
+
     try {
-      const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
-      await axios.post(`${backendUrl}/send-email`, formData);
-      setStatus("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" }); // Clear the form
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setResult("Form Submitted Successfully");
+        form.reset();
+      } else {
+        setResult(data.message);
+      }
     } catch (error) {
-      console.error("Error sending message:", error);
-      setStatus("Failed to send message.");
+      console.error("Fetch error:", error);
+      setResult("An error occurred while submitting the form.");
     }
   };
+
   
 
 
@@ -290,7 +289,7 @@ function App() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#83e50a] mb-16 ]">Contact Us</h2>
           <div className="max-w-2xl mx-auto">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={onSubmit} className="space-y-6">
               <div className="transform hover:scale-105 transition-all duration-300">
                 <label htmlFor="name" className="block text-lg font-medium text-[#83e50a] mb-2">
                   Name
@@ -299,8 +298,7 @@ function App() {
                   type="text" 
                   id="name" 
                   required 
-                  value={formData.name} 
-                  onChange={handleChange}
+                  name='name'
                   className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300"
                   placeholder="Your name"
                 />
@@ -313,8 +311,7 @@ function App() {
                   type="email" 
                   id="email" 
                   required 
-                  value={formData.email} 
-                  onChange={handleChange}
+                  name='email'
                   className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300"
                   placeholder="your.email@example.com"
                 />
@@ -328,8 +325,7 @@ function App() {
                   id="message" 
                   rows={4} 
                   required 
-                  value={formData.message} 
-                  onChange={handleChange}
+                  name='message'
                   className="w-full bg-[#223548] border-2 border-[#83e50a] rounded-lg px-4 py-3 text-white placeholder-white/50 focus:border-[#33d2fe] focus:ring-2 focus:ring-[#33d2fe]/20 transition-all duration-300"
                   placeholder="Your message"
                 />
@@ -346,8 +342,8 @@ function App() {
               <div className="flex justify-center space-x-8">
                 {[
                   { icon: Github, href: 'https://github.com/Ranaba123', label: 'GitHub' },
-                  { icon: Linkedin, href: '#', label: 'LinkedIn' },
-                  { icon: Instagram, href: '#', label: 'Instagram' },
+                  { icon: Linkedin, href: 'https://www.linkedin.com/company/signsri', label: 'LinkedIn' },
+                  { icon: Music2, href: 'https://www.tiktok.com/@sign.sri?is_from_webapp=1&sender_device=pc', label: 'Music2' },
                   { icon: Mail, href: 'mailto:signsri.official@gmail.com', label: 'Email' }
                 ].map((social, index) => (
                   <a
