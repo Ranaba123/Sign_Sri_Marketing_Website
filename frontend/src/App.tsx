@@ -135,6 +135,7 @@ function App() {
             src={HeroImage}
             alt="Hero Background"
             className="w-full h-full object-cover brightness-[0.3]"
+            loading='lazy'
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#162737]/10 to-[#162737]/20" />
         </div>
