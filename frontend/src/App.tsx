@@ -341,7 +341,7 @@ function App() {
               <h3 className="text-2xl font-semibold mb-6 text-[#83e50a] ]">Connect With Us</h3>
               <div className="flex justify-center space-x-8">
                 {[
-                  { icon: Github, href: 'https://github.com/Ranaba123', label: 'GitHub' },
+                  { icon: Github, href: 'https://github.com/Sign-Sri/Sign-Sri-App.git', label: 'GitHub' },
                   { icon: Linkedin, href: 'https://www.linkedin.com/company/signsri', label: 'LinkedIn' },
                   { icon: Music2, href: 'https://www.tiktok.com/@sign.sri?is_from_webapp=1&sender_device=pc', label: 'Music2' },
                   { icon: Mail, href: 'mailto:signsri.official@gmail.com', label: 'Email' }
