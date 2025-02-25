@@ -14,6 +14,7 @@ import {
   X,
   Music2,
 } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 
 
 import PyaraImage from './assets/Pyara.jpg';
@@ -68,6 +69,7 @@ function App() {
 
 
   return (
+    
     <div className="min-h-screen bg-[#162737] font-sans">
       {/* Navigation - slightly lighter */}
       <nav className="fixed w-full bg-[#1a2f42]/95 backdrop-blur-sm z-50">
@@ -367,7 +369,9 @@ function App() {
           <p className="text-white">&copy; {new Date().getFullYear()} SignSri. All rights reserved.</p>
         </div>
       </footer>
+      <Analytics />
     </div>
+    
   );
 }
 
