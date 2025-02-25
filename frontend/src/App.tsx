@@ -249,12 +249,13 @@ function App() {
                 key={index}
                 className="group relative overflow-hidden rounded-lg transform hover:scale-105 transition-all duration-300 "
               >
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer"></a>
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-64 object-cover brightness-75 group-hover:brightness-100 transition-all duration-300"
-                />
+                <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-64 object-cover brightness-75 group-hover:brightness-100 transition-all duration-300"
+                  />
+                </a>
                 <div className="absolute inset-0 bg-gradient-to-t from-[#162737] via-[#162737]/50 to-transparent flex items-end p-6">
                   <div>
                     <h3 className="text-xl font-semibold text-[#83e50a] group-hover:text-[#33d2fe] transition-colors duration-300">{member.name}</h3>
