@@ -238,17 +238,18 @@ function App() {
           <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#83e50a] mb-16 ]">Our Team</h2>
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
             {[
-              { name: 'Pyara Perera', role: 'Team Leader', image: PyaraImage },
-              { name: 'Nemsara Ranaba', role: 'Team Member', image: NemsaraImage },
-              { name: 'Vinuka Arampath', role: 'Team Member', image: VinukaImage },
-              { name: 'Sanhida Gimhan', role: 'Team Member', image: SanhidaImage },
-              { name: 'Joel Lawrence', role: 'Team Member', image: JoelImage },
-              { name: 'Dileesha Devendra', role: 'Team Member', image: DileeshaImage }
+              { name: 'Pyara Perera', role: 'Team Leader', image: PyaraImage,Linkedin:'https://www.linkedin.com/in/pyara-perera-572725293/'},
+              { name: 'Nemsara Ranaba', role: 'Team Member', image: NemsaraImage,Linkedin:'https://www.linkedin.com/in/nemsara-ranaba-27b2701aa/' },
+              { name: 'Vinuka Arampath', role: 'Team Member', image: VinukaImage,Linkedin:'https://www.linkedin.com/in/vinuka-ara/' },
+              { name: 'Sanhida Gimhan', role: 'Team Member', image: SanhidaImage,Linkedin:'#' },
+              { name: 'Joel Lawrence', role: 'Team Member', image: JoelImage,Linkedin:'https://www.linkedin.com/in/joel-lawrence-8b5213262/' },
+              { name: 'Dileesha Devendra', role: 'Team Member', image: DileeshaImage,Linkedin:'#' }
             ].map((member, index) => (
               <div
                 key={index}
                 className="group relative overflow-hidden rounded-lg transform hover:scale-105 transition-all duration-300 "
               >
+                <a href={member.Linkedin} target="_blank" rel="noopener noreferrer"></a>
                 <img
                   src={member.image}
                   alt={member.name}
