@@ -75,7 +75,7 @@ function App() {
       <nav className="fixed w-full bg-[#1a2f42]/95 backdrop-blur-sm z-50">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
-            <div className="flex items-center space-x-2 animate-float">
+            <div className="flex items-center space-x-2">
               <a href="www.sign-sri.com">
                  <img src={LogoImage} alt="Sign Sri Logo" className="w-12 h-12"  />
 
@@ -144,7 +144,7 @@ function App() {
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 animate-fade-in leading-tight ]">
             Breaking Barriers in <span className="text-[#83e50a] drop-shadow-[0_0_15px_rgba(131,229,10,0.5)]">Communication</span>
           </h1>
-          <p className="text-lg sm:text-xl text-[#ffffff] mb-8 max-w-2xl mx-auto animate-fade-in leading-relaxed drop-shadow-[0_0_10px_rgba(51,210,254,0.5)]" style={{ animationDelay: '0.2s' }}>
+          <p className="text-lg sm:text-xl text-[#ffffff] mb-8 max-w-2xl mx-auto animate-fade-in leading-relaxed drop-shadow-[0_0_10px_rgba(51,210,254,0.5)] " style={{ animationDelay: '0.2s' }}>
             Empowering the deaf community through innovative AI-powered sign language translation
           </p>
           <button className="bg-[#83e50a] text-[#162737] px-8 py-3 rounded-full font-semibold text-lg hover:bg-[#33d2fe] hover:scale-105 transition-all duration-300 animate-fade-in shadow-[0_0_20px_rgba(131,229,10,0.3)]" style={{ animationDelay: '0.4s' }}>
