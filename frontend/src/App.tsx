@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { 
   MessageSquare, 
   Book, 
@@ -13,6 +13,7 @@ import {
   Menu,
   X,
   Music2,
+  ArrowUp,
 } from 'lucide-react';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -33,7 +34,7 @@ function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navItems = ['Home', 'About Us', 'Key Features', 'Team', 'Contact Us'];
   const [isPlaying, setIsPlaying] = useState(false);
-  
+  const [showScrollButton, setShowScrollButton] = useState(false);
 
   const [result, setResult] = React.useState("");
 
@@ -69,6 +70,28 @@ function App() {
     window.location.href = '/'; // This will reload the page and navigate to the root URL
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Smooth scrolling
+    });
+  };
+
+  // Effect to show/hide the scroll-to-top button based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setShowScrollButton(true); // Show button when scrolled down 300px
+      } else {
+        setShowScrollButton(false); // Hide button when near the top
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll); // Add scroll event listener
+    return () => {
+      window.removeEventListener('scroll', handleScroll); // Cleanup on unmount
+    };
+  }, []);
   
 
 
@@ -375,6 +398,16 @@ function App() {
         </div>
       </footer>
       <Analytics />
+      {/* Scroll to Top Button */}
+      {showScrollButton && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 p-3 bg-[#83e50a] text-[#162737] rounded-full shadow-lg hover:bg-[#33d2fe] hover:scale-110 transition-all duration-300 z-50"
+          aria-label="Scroll to top"
+        >
+          <ArrowUp size={24} />
+        </button>
+      )}
     </div>
     
   );
