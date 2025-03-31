@@ -4,7 +4,7 @@ import Webcam from "react-webcam";
 import "./App.css";
 import { drawRect } from "./utilities";
 
-function camera() {
+function SignToText() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
   const [dimensions, setDimensions] = useState({ width: 640, height: 480 });
@@ -133,4 +133,4 @@ function camera() {
   );
 }
 
-export default camera;
+export default SignToText;
